@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtkb82/blog.git"
+  },
+  "author": "Ken Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtkb82/blog/issues"
+  },
+  "homepage": "https://github.com/dtkb82/blog#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.4"
+  }
+}
