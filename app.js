@@ -1,11 +1,13 @@
 var express = require("express")
 var app = express()
 var bodyParser = require("body-parser")
+var methodOverride = require("method-override")
 var mongoose = require("mongoose")
 
 app.set("view engine", "ejs")
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static("public"))
+app.use(methodOverride("_method"))
 mongoose.connect("mongodb://localhost/blog")
 
 //Mongoose/Model Config
@@ -58,9 +60,27 @@ app.post("/blogs", function(req, res){
     })
 })
 
+//EDIT route
+app.get("/blogs/:id/edit", function(req, res){
+    Blog.findById(req.params.id, function(err, foundBlog){
+        if(err){
+            res.redirect("/blogs")
+        } else {
+            res.render("edit", {blog: foundBlog})
+        }
+    })
+})
 
-
-
+//UPDATE route
+app.put("/blogs/:id", function(req, res){
+    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
+        if(err){
+            res.redirect("/blogs")
+        } else {
+            res.redirect("/blogs/" + req.params.id)
+        }
+    })
+})
 
 
 

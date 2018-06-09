@@ -4,4 +4,10 @@ i.icon {
 
 .container.main {
     margin-top: 7em;
+    width: 60%;
+}
+
+.image {
+    width: 95%;
+    margin: auto;
 }
