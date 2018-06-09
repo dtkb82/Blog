@@ -4,8 +4,8 @@
     <div>
         <h3><%= blog.title %></h3>
         <img src="<%= blog.image %>" alt="Beautiful Lake">
-        <span><%= blog.created %></span>
-        <p><%= blog.body %></p>
+        <span><%= blog.created.toDateString() %></span>
+        <p><%= blog.body.substring(0, 200) %>....</p>
         <a href="/blogs/<%= blog._id %>">Read More</a>
     </div>
 <% }) %>
