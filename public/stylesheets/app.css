@@ -7,7 +7,10 @@ i.icon {
     width: 60%;
 }
 
-.image {
-    width: 95%;
-    margin: auto;
+#readMoreIcon {
+    font-size: inherit;
+}
+
+#delete {
+    display: inline;
 }
